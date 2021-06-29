@@ -36,4 +36,4 @@ async def snipe(ctx):
     await ctx.channel.send(embed=embed)
 
 
-client.run('ODU5MzY0ODg5ODAwNDc0NjQ0.YNrn6w.fbZCGZv6yLw9zf-tIj3_FTMH7Ew')
+client.run(token)
