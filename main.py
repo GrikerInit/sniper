@@ -1,17 +1,15 @@
 import discord
-from time import time
-from discord import guild
-from discord import permissions
-from discord import message
-from discord.embeds import Embed
 from discord.ext import commands
 import os
-
-from discord.ext.commands import context
 
 client = commands.Bot(command_prefix=".")
 token = os.getenv("DISCORD_BOT_TOKEN")
 client.sniped_messages = {}
+
+@client.event
+async def on_ready() :
+    await client.change_presence(status = discord.Status.idle, activity = discord.Game(".snipe by Rozeen"))
+    print("I am online")
 
 @client.event
 async def on_message_delete(message):
@@ -37,4 +35,5 @@ async def snipe(ctx):
 
     await ctx.channel.send(embed=embed)
 
-    client.run(token)
+
+client.run('ODU5MzY0ODg5ODAwNDc0NjQ0.YNrn6w.fbZCGZv6yLw9zf-tIj3_FTMH7Ew')
